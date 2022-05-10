@@ -1,3 +1,15 @@
 <div class="container mt-5">
   <h1>Index</h1>
+  <ul>
+    <% @tasks.each do |task|  %>
+      <li>
+        <% if task.completed? %>
+          <i class="fa-regular fa-square-check"></i>
+        <% else %>
+          <i class="fa-regular fa-square"></i>
+        <% end %>
+        <%= "#{task.title} - #{task.details}" %>
+      </li>
+    <% end %>
+  </ul>
 </div>
